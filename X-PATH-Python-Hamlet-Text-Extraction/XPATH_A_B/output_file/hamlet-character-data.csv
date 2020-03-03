@@ -1,0 +1,34 @@
+id,status,occupation
+F-ham-pla.1,worker,Missing occupation
+F-ham-all,Missing status,Missing occupation
+F-ham-amb,noble,Missing occupation
+F-ham-plp,worker,Missing occupation
+F-ham-plq,worker,Missing occupation
+F-ham-ber,worker,military
+F-ham-cap,worker,military
+F-ham-clo.1,worker,Missing occupation
+F-ham-for,noble,military
+F-ham-fra,worker,military
+F-ham-gen,noble,Missing occupation
+F-ham-gmn,noble,Missing occupation
+F-ham-gho,noble,military
+F-ham-gui,noble,Missing occupation
+F-ham-ham,noble,Missing occupation
+F-ham-hor,noble,Missing occupation
+F-ham-cla,noble,Missing occupation
+F-ham-lae,Missing status,Missing occupation
+F-ham-luc,noble,Missing occupation
+F-ham-mar,worker,military
+F-ham-mes,worker,Missing occupation
+F-ham-oph,noble,Missing occupation
+F-ham-osr,noble,Missing occupation
+F-ham-clo.2,worker,Missing occupation
+F-ham-pol,noble,Missing occupation
+F-ham-plk,worker,Missing occupation
+F-ham-pri,worker,Missing occupation
+F-ham-ger,noble,Missing occupation
+F-ham-ros,noble,Missing occupation
+F-ham-rey,worker,Missing occupation
+F-ham-sai,worker,Missing occupation
+F-ham-ser,worker,Missing occupation
+F-ham-vol,noble,Missing occupation

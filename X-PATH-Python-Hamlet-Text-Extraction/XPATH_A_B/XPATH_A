@@ -1,0 +1,91 @@
+1. //h2/text()
+
+Here, we look for text content of the h2 tag. If we used 2 slashes before
+the text() extraction statement, it would be asking to also grab the children of the h2 tag, which we wouldn't
+want but it doesn't have any here which is why it technically would work (question I asked.)
+
+2. //*[@class="playtitle"]/text()
+
+Here we grab the element content of any element using the wildcard symbol
+(asterick) and specify a class attribute of title using the bracket notation, the @ symbol and specifying the value
+of the attribute ("playtitle").
+
+3. //p[@class="playtextsmall"]/a/text()
+
+
+ Here, we have to search specifically enough to get just the scene titles.
+ We want the text content of the scene titles only and must not get out the numbers. When inspected, we can see
+ that the numbers are a child of the a tag (content within the strong tag). We must use 1 slash before the extraction
+ expression /text() so that we indicate only the element text content of the a tag itself and not its children.
+ We must specify the attribute value "playtextsmall" because this is the one that includes all of the scene titles. The
+ href would be too specific, so we must back up 1 level to the p tag.
+
+ 4. skip
+
+ 5. //span[@class="playlinenum"]/text()
+
+ Here, I inspect one of the line numbers and find it is housed in a span tag. I see it has an attribute value
+ of "playlinenum" so I use bracket notation to select the elements with these values. I then use the text() extraction
+ notation to extract out the text contents of these tags (the line numbers themselves).
+
+ 6. //li/a/@name
+
+ For this one, I was looking for the line number starts for each character's speech. It's stored within an a tag and
+ has a name attribute value of the start line number. To get the desired results and only those results, we must hop one
+ up to the li tag. Specificity must begin here in order to get only the name attribute values we desire (the line number
+ starts) and not other places where it is used. We look for immediate children only once getting to the level of the
+ list element.
+
+ 7. //li/strong/a/text()
+
+ For this one, I need to seek out only the character names and not the period. I see that they are stored in an a tag
+ which is stored in the strong element which is stored in li tag.  The period is stored as child text under strong. I need
+ to be more specific and get to the level of the a tag which will yield the names only which are stored in the a tag which is
+ a child of strong. We don't want all the children of strong, so I move down to the a tag to exclude the period. I extract
+ out the desired text elements.
+
+ 8. //li/strong/a[@href="characters/charlines.php?CharID=bernardo&WorkID=hamlet"]/text()
+
+ Here, I used the path of # 7 to get to where I needed to go. Then I inspected to see how I could distinguish just
+ the speaker name elements of Bernando. I noticed the href link and used that as a specification within the a tag using
+ bracket notation. I plugged in the value for the href and extracted out the text content using the text() extraction
+ notation.
+
+ 9. //li[@class="playtext"]/..//a[@href="characters/charlines.php?CharID=bernardo&WorkID=hamlet"]/../../text()
+
+ This was the most challenging for me to make sense of but finally! Success is sweet.
+
+ For this one, we've got to select the a tags that specifically have Bernando's lines so we indicate this by asking for
+ any li elements marked with the class attriute value "playtext" (all text lines at this point) and then hop down
+ to the descendent a tag (all a tags) with the href attribute value "characters/charlines.php?CharID=bernardo&WorkID=hamlet"
+ to get only Bernando's lines. Now, once we've got the right selections, we must extract the text we want.
+ We use parent notation and hop us to look for the text 2 levels up from the a tag within li element where the script
+ lines for Bernando sit.
+
+ 10.  //li/text()
+
+ For this one, in order to get just the spoken lines and not include the names of speakers or periods with this query,
+ the extraction notation is needed to indicate the text content is what is wanted from this query. We want only the immediate
+ children of li tag so one slash is used after li.
+
+ 11. //li[contains(., "Death")]/text()
+
+ Here, I find all the passages and limit only to the lines that contain "Death" using the (., "") function where the dot
+ refers to the current node and the string quotes are the text to look for. I select the whole passage so not each line
+ stored as a string contains "Death."
+
+ 12. //li[contains(., "Death")]/strong/a/text()
+
+ Here, I build on #11. After finding these target passages containing "Death," I look for just the speakers by tracing
+ down the nested path to the children where the speakers are stored. Find the a child elements of the strong elements which
+ are children of the li elements which contain the "Death" passage.
+
+ 13. //li[contains(., "Death")]/a/@name
+
+ For this one, we build on # 6 and the previous #11. I like how this one combined to help clarify how to seek and
+ extract related to work we have already done. I got to the "Death" passages again, backed up from the last example
+ as I didn't need the speaker names and extracted out the values for the name attributes using attribute extraction. This
+ gives the starting line numbers stored as values for these two passages respectively.
+
+
+

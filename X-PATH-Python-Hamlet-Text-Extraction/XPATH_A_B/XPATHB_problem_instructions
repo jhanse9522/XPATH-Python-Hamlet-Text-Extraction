@@ -1,0 +1,17 @@
+Attached is a py file that has the directions within.
+
+Also attached is the data file (hamlet-tei.xml) that you will be using. This is the same data file that we will be using with the lecture this week.
+
+Correction: For 5b, the last part of the direction should be corrected with below. The example output is correct, you are just getting the scene types and numbers here. In 5c you'll add the rest.
+
+#   - Create a print statement that states "Scene: #" where each # is replaced by the appropriate value
+#  Here are the first 4 print results:
+# scene: 1
+# scene: 2
+# scene: 3
+# scene: 4
+
+hamlet-tei.xml hamlet-tei.xmlAugust 23 2018, 9:53 PM
+
+xpathb-forstudents.py xpathb-forstudents.pyAugust 23 2018, 9:53 PM
+Submission

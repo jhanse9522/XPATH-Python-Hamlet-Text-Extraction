@@ -1,0 +1,60 @@
+1. Here, I needed all the title elements so used 2 slashes, placed inside a string. Since it's an element, I put the alias
+name before title (tei) and then extracted the text from all the titles with text extraction notation (text()).
+
+2. Here, I needed to query only the title elements inside the titleStmt node so I used the // to indicate look anywhere for
+titleStments and then find me the ones with title elements inside. I make sure to add the alias to the element (tei) and extract
+out the text of this selection which is the content I need. I run a length of the list to make sure I have the right number
+of results.
+
+3. Here, I select out all the div elements, making sure to mark with the namespace alias because they are elements (tei before it).
+I need to extract the type attributes so I use the extraction notation for attributes (@) and indicate which attributes I want
+to extract out -- the ones labeled type. I check the length of my results for accuracy. It checks out (26). I run a counter from
+the collections module which creates a frequency dictionary to check for how many attributes with value 'scene', 'act', and 'play' there
+are. I learn that out of 26 type attributes (of the div elements), 20 have the value 'scene', 5 have the value 'act', 1 has the value 'play.'
+
+4. The div elements act as the containers for the play. They are containers within containers. So, we can see by looking at the
+counter results that semantically the div elements represent the play divided up into it's constituent parts. There is 1 play. The play is
+divided up into acts. The acts are divided up into scenes. These are marked by the div elements. The play is marked by a div tag. Then,
+each new act is marked with a div tag. There are 5 of those. Each new scene is marked with a div tag. There are 20 of those. You can
+find the info you want within the specific scene or act by accessing the appropriate div tag. The scene div tags live inside the act
+div tags which live inside the play div tag.
+
+5.
+a.
+
+For this one, I needed to first remember how to wrap strings inside strings! I almost forgot to do that. So, we are
+looking to select element tags here. We must use the alias namespace before the selection. Then, I look for all divs
+and start my bracket notation to get specific on which attribute values I am looking for. Only the ones with the
+value "scene". Then I make sure to use double quotes to indicate the "scene" value so that I can wrap the query param
+in single quote strings. I check the length which checks out (20) and print out the elements to make sure they
+are appearing correctly.
+
+b.
+
+I loop over the divs individually from the results of the elements found in 5a (allscenedivs), and I save
+results for both the n attribute value (which represents the scene number) and the type attribute value which represents
+the type (scene, play, or act). I make sure to print out the [0] element of the list for both the type_value result and
+the n result each time through. I print out the results of each loop in the instructed format using a colon string to
+connect the results.
+
+c.
+
+Here, I add the parent's elements by going up using the .. notation in the tree structure to access the parent of
+the div and indicate the value I'm looking for and save it in a variable. I do this for both
+the parent_type and the parent_n. I then print it out and reference 0 element with list slice notation.
+
+6.  I use the tei alias because I am looking for the elements and I need all the person elements here. I indicate
+that inside my string with tei:person. To grab out the elements I need, within the loop, I do a query asking for
+the attribute value for id, and the text content of the elements I need (children of person) - one is socecStatus,
+and one is occupation.
+
+To collect the results I used the accumultor pattern and created an empty list outside the loop. Each time through,
+I appended the list of results and then printed the larger list of lists outside of the loop and checked the length (33), which checks out.
+
+
+7.
+After importing the csv module:
+I plugged in my list of list (passed in) to the parameter for writerows and passed in the column string names to writerow
+which writes out the headers as a row of headers. This is performed on the object made from passing in the new file to
+to writer from csv saved as csvout. We close the file object and the info is written out to the file 'hamlet-character-data.csv'
+And we're done!
